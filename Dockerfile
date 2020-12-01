@@ -9,7 +9,7 @@ RUN echo "uglify-es uglifycss" |\
 
 COPY ./dockerfile-commons/reduce_alpine.sh /tmp/reduce_alpine.sh
 RUN chmod +x /tmp/reduce_alpine.sh &&\
-    /tmp/reduce_alpine.sh /target env busybox node /usr/local/lib/node_modules/*
+    /tmp/reduce_alpine.sh /target sh env busybox node /usr/local/lib/node_modules/*
 
 COPY docker-entrypoint.sh /target/usr/local/bin/
 RUN chmod +x /target/usr/local/bin/docker-entrypoint.sh
