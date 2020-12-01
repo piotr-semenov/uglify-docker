@@ -1,3 +1,9 @@
+[![uglify-js:3.12.1](https://img.shields.io/badge/uglifyjs-3.12.1-green.svg)](https://www.npmjs.com/package/uglify-js)
+[![uglifycss:0.0.29](https://img.shields.io/badge/uglifycss-0.0.29-green.svg)](https://www.npmjs.com/package/uglifycss)
+[![semenovp/tiny-uglify:latest](https://img.shields.io/docker/image-size/semenovp/tiny-uglify/latest)](https://hub.docker.com/r/semenovp/tiny-uglify)
+[![docker image size](https://img.shields.io/microbadger/layers/semenovp/tiny-uglify/latest)](https://microbadger.com/images/semenovp/tiny-uglify/)
+[![docker pulls](https://img.shields.io/docker/pulls/semenovp/tiny-uglify.svg)](https://hub.docker.com/r/semenovp/tiny-uglify/)
+
 # Usage
 Just add the following alias to your .bashrc (or .bash_profile in OSX):
 
