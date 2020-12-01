@@ -11,7 +11,8 @@ COPY ./dockerfile-commons/reduce_alpine.sh /tmp/reduce_alpine.sh
 RUN chmod +x /tmp/reduce_alpine.sh &&\
     /tmp/reduce_alpine.sh /target env busybox node /usr/local/lib/node_modules/*
 
-COPY uglify.sh /target/usr/local/bin/
+COPY docker-entrypoint.sh /target/usr/local/bin/
+RUN chmod +x /target/usr/local/bin/docker-entrypoint.sh
 
 
 FROM scratch
@@ -25,4 +26,4 @@ LABEL \
 ENV PATH=/bin:/usr/bin:/usr/local/bin:/usr/local/lib/node_modules/uglifycss:/usr/local/lib/node_modules/uglify-es/bin
 COPY --from=builder /target /
 
-ENTRYPOINT ["uglify.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
