@@ -37,6 +37,7 @@ docker build -t semenovp/tiny-uglify:latest .
 # List of `uglify` images
 
 Review the sizes of another `uglify` images retrieved from [DockerHub](https://hub.docker.com) against current one built on Node.js v15.3.0.
+Note, the original [node:alpine](https://hub.docker.com/_/node) is of 37.85Mb / 109Mb.
 
 | REPOSITORY | YYYY-MM-DD | COMPRESSED / UNCOMPRESSED SIZE |
 |:-----------|:----------:|:------------------------------:|
