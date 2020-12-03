@@ -31,7 +31,7 @@ uglify css --expand-vars --max-line-len 500 --output output.css input.css
 
 # How to build on your own?
 ```bash
-docker build -t semenovp/tiny-uglify:latest .
+docker build --build-arg vcsref="$(git rev-parse --short HEAD)" -t semenovp/tiny-uglify:latest .
 ```
 
 # List of `uglify` images
