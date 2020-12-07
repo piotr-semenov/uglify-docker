@@ -8,14 +8,12 @@ RUN echo "uglify-es uglifycss" |\
     npm cache clean --force
 
 COPY ./dockerfile-commons/reduce_alpine.sh /tmp/reduce_alpine.sh
-RUN chmod +x /tmp/reduce_alpine.sh &&\
-    /tmp/reduce_alpine.sh -v /target node\
-                                     \
-                                     /usr/local/lib/node_modules/uglify-es\
-                                     /usr/local/lib/node_modules/uglifycss
+RUN sh /tmp/reduce_alpine.sh -v /target node\
+                                        \
+                                        /usr/local/lib/node_modules/uglify-es\
+                                        /usr/local/lib/node_modules/uglifycss
 
 COPY docker-entrypoint.sh /target/usr/local/bin/
-RUN chmod +x /target/usr/local/bin/docker-entrypoint.sh
 
 
 FROM scratch
@@ -33,4 +31,4 @@ LABEL \
 ENV PATH=/bin:/usr/bin:/usr/local/bin:/usr/local/lib/node_modules/uglifycss:/usr/local/lib/node_modules/uglify-es/bin
 COPY --from=builder /target /
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["sh", "docker-entrypoint.sh"]
