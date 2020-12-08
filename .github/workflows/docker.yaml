@@ -1,0 +1,25 @@
+name: CI to GitHub Packages
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build tiny-uglify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub Action
+        uses: actions/checkout@v2
+
+      - name: Build and Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          path: .
+          dockerfile: ./Dockerfile
+          build-args: |
+            vcsref="${GITHUB_SHA::8}"
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: semenovp/tiny-uglify
+          tags: latest
