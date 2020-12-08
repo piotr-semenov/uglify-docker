@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: Build tiny-uglify
+    name: Build semenovp/tiny-uglify
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -19,6 +19,14 @@ jobs:
           registry: docker.pkg.github.com
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
+
+      - name: Build and Push to GitHub Packages
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          build-args: |
+            vcsref="${GITHUB_SHA::8}"
           repository: semenovp/tiny-uglify
           tags: latest
