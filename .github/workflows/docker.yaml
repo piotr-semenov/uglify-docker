@@ -8,8 +8,10 @@ jobs:
     name: Build tiny-uglify
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout GitHub Action
+      - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          submodules: true
 
       - name: Build and Push to GitHub Packages
         uses: docker/build-push-action@v1
