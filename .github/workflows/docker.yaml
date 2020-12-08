@@ -16,7 +16,7 @@ jobs:
         with:
           path: .
           dockerfile: ./Dockerfile
-          build-args: |
+          build_args: |
             vcsref="${GITHUB_SHA::8}"
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
