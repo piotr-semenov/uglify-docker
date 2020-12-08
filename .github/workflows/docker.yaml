@@ -23,7 +23,6 @@ jobs:
       - name: Build and Push to GitHub Packages
         uses: docker/build-push-action@v2
         with:
-          push: true
           build-args: |
             vcsref=${GITHUB_SHA::8}
           repository: semenovp/tiny-uglify
