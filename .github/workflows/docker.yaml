@@ -25,5 +25,5 @@ jobs:
         with:
           build-args: |
             vcsref=${GITHUB_SHA::8}
-          repository: semenovp/tiny-uglify
+          repository: piotr-semenov/semenovp/tiny-uglify
           tags: latest
