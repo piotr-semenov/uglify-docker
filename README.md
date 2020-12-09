@@ -41,7 +41,7 @@ Note, the original [node:alpine](https://hub.docker.com/_/node) is of 37.85Mb / 
 
 | REPOSITORY | YYYY-MM-DD | COMPRESSED / UNCOMPRESSED SIZE |
 |:-----------|:----------:|:------------------------------:|
-| **[semenovp/tiny-uglify:latest](https://hub.docker.com/r/semenovp/tiny-uglify)** | 2020-11-30 | **33.69MB / 94.6MB** |
+| **[semenovp/tiny-uglify:latest](https://hub.docker.com/r/semenovp/tiny-uglify)** | 2020-12-09 | **30.35MB / 81.9MB** |
 | [sirehna/uglify:RELEASE-2020-05-05](https://hub.docker.com/r/sirehna/uglify) | 2020-05-05 | 58.24MB / 169MB |
 | [olbat/uglify:latest](https://hub.docker.com/r/olbat/uglify) | 2020-11-29 | 142.89MB / 389MB |
 | [minty/uglifyjs:2.0](https://hub.docker.com/r/minty/uglifyjs) | 2015-07-24 | 242.10MB / 642MB |
